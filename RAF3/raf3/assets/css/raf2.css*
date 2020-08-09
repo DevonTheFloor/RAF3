@@ -1,0 +1,47 @@
+/*
+Error: Invalid CSS after "10px": expected expression (e.g. 1px, bold), was ";"
+        on line 2 of raf2.sass
+
+1: body {
+2:   padding-top: 10px;
+3: }
+4: [class*="col-"], footer {
+5:   background-color: lightgreen;
+6:   border: 2px solid black;
+7:   border-radius: 6px;
+
+Backtrace:
+raf2.sass:2
+/usr/lib/ruby/vendor_ruby/sass/scss/parser.rb:1207:in `expected'
+/usr/lib/ruby/vendor_ruby/sass/script/lexer.rb:229:in `expected!'
+/usr/lib/ruby/vendor_ruby/sass/script/parser.rb:744:in `assert_done'
+/usr/lib/ruby/vendor_ruby/sass/script/parser.rb:76:in `parse'
+/usr/lib/ruby/vendor_ruby/sass/script/parser.rb:240:in `parse'
+/usr/lib/ruby/vendor_ruby/sass/script.rb:27:in `parse'
+/usr/lib/ruby/vendor_ruby/sass/engine.rb:1151:in `parse_script'
+/usr/lib/ruby/vendor_ruby/sass/engine.rb:721:in `parse_property'
+/usr/lib/ruby/vendor_ruby/sass/engine.rb:692:in `parse_property_or_rule'
+/usr/lib/ruby/vendor_ruby/sass/engine.rb:658:in `parse_line'
+/usr/lib/ruby/vendor_ruby/sass/engine.rb:536:in `build_tree'
+/usr/lib/ruby/vendor_ruby/sass/engine.rb:555:in `block in append_children'
+/usr/lib/ruby/vendor_ruby/sass/engine.rb:554:in `each'
+/usr/lib/ruby/vendor_ruby/sass/engine.rb:554:in `append_children'
+/usr/lib/ruby/vendor_ruby/sass/engine.rb:545:in `block in build_tree'
+/usr/lib/ruby/vendor_ruby/sass/engine.rb:538:in `each'
+/usr/lib/ruby/vendor_ruby/sass/engine.rb:538:in `build_tree'
+/usr/lib/ruby/vendor_ruby/sass/engine.rb:555:in `block in append_children'
+/usr/lib/ruby/vendor_ruby/sass/engine.rb:554:in `each'
+/usr/lib/ruby/vendor_ruby/sass/engine.rb:554:in `append_children'
+/usr/lib/ruby/vendor_ruby/sass/engine.rb:409:in `_to_tree'
+/usr/lib/ruby/vendor_ruby/sass/engine.rb:381:in `_render_with_sourcemap'
+/usr/lib/ruby/vendor_ruby/sass/engine.rb:298:in `render_with_sourcemap'
+/usr/lib/ruby/vendor_ruby/sass/exec/sass_scss.rb:387:in `run'
+/usr/lib/ruby/vendor_ruby/sass/exec/sass_scss.rb:63:in `process_result'
+/usr/lib/ruby/vendor_ruby/sass/exec/base.rb:52:in `parse'
+/usr/lib/ruby/vendor_ruby/sass/exec/base.rb:19:in `parse!'
+/usr/bin/sass:8:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Invalid CSS after \"10px\": expected expression (e.g. 1px, bold), was \";\"\A         on line 2 of raf2.sass\A \A 1: body {\A 2:   padding-top: 10px;\A 3: }\A 4: [class*=\"col-\"], footer {\A 5:   background-color: lightgreen;\A 6:   border: 2px solid black;\A 7:   border-radius: 6px;"; }

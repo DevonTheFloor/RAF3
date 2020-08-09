@@ -1,0 +1,49 @@
+body {
+  padding-top: 10px;
+  background-image: url('../img/fastn.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;}
+
+.container-fluid {
+  
+  border: 15px ridge silver;
+  border-radius: 5%;
+  width: 98%;
+  min-height: 500px;
+}
+
+[class*="col-"]{
+  border-radius: 3px;
+  text-align: center; 
+}
+.col-xs-6{
+  align-items: center;
+}
+
+header{
+  background-image: url('../img/fdefnf.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 15px ridge silver;
+  border-radius: 7%;
+  padding: 1%;
+}
+
+main{
+  height: 70%;
+}
+section{
+
+}
+footer{
+  padding-bottom: 2%;
+  border: 7px ridge silver;
+  border-radius: 5%
+}
+
+img{
+  margin: 5%;
+  width: 45%;
+  height: 10%;
+}
+

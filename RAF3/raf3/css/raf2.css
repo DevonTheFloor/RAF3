@@ -1,0 +1,82 @@
+html, body {
+  height: 100%;
+  background-image: url("../img/fastn.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed; }
+
+.container-fluid {
+  width: 100%;
+  height: 100%; }
+
+[class*="col-"] {
+  border-radius: 3px;
+  text-align: center; }
+
+header {
+  background-color: darkgray;
+  border: 7px ridge silver;
+  position: fixed;
+  top: 2px;
+  z-index: 1;
+  width: 100%;
+  height: auto;
+  padding: 1%; }
+
+.col-xs-6 {
+  align-items: center; }
+
+main {
+  height: 70%; }
+
+.send {
+  display: none;
+  text-align: center;
+  background-color: aliceblue;
+  opacity: 0.8;
+  position: absolute;
+  margin: 20%;
+  z-index: 3; }
+
+.mini {
+  margin: 4%;
+  width: 80%;
+  height: auto; }
+
+footer {
+  background-color: darkgray;
+  border: 7px ridge silver;
+  position: fixed;
+  bottom: 0px;
+  z-index: 1;
+  width: 100%;
+  height: auto; }
+
+img {
+  border: 1px solid black;
+  box-shadow: 8px 8px 8px 8px grey; }
+
+.picnav {
+  margin: 8%;
+  width: 70%;
+  height: 10%; }
+
+ul {
+  list-style: none; }
+
+.btn-lg {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  position: fixed;
+  top: 150px;
+  z-index: 1; }
+
+@media screen and (max-width: 780px) {
+  body, html {
+    background-image: url("../img/fdefnf.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed; } }
+
+/*# sourceMappingURL=raf2.css.map */

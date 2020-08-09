@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+   <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial=1.0"/>
+    <link href="/assets/css/bootstrap.css" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.8.0/css/all.css" rel="stylesheet">
+    <link href="/css/raf2.css" rel="stylesheet">
+    <title>RAF 3 - Node version </title>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <header class="row nav-menu">
+        <div class="col-3 col-sm-3 col-lg-3">
+          <a href="EcoleMaison/" class="btn btn-primary btn-primary"><i class="fas fa-chalkboard-teacher"></i> COURS</a>
+        </div>
+        <div class="col-3 col-sm-3 col-lg-3">
+          <a href="#" class="btn btn-primary btn-warning"><i class="fas fa-business-time"></i> DEVOIR</a>
+        </div>
+        <div class="col-3 col-sm-3 col-lg-3">
+          <a href="#" class="btn btn-primary btn-danger"><i class="fas fa-user-graduate"></i> EXAM</a>
+      </div>
+        <div class="col-3 col-sm-3 col-lg-3">
+           <a href="#" class="add btn btn-primary btn-success"><i class="fas fa-cloud-upload-alt"></i> AJOUT</a>
+        </div>
+      </header>
+      <main class="row">
+        <aside class="send col-12 col-lg-3">
+          <form  action="/" method="post" enctype="multipart/form-data">
+          <p>
+          Formulaire d'envoi de fichier :<br><br>
+          <label for="monfichier">Selectionne le document</label><br>
+          <input type="file" id="file" name="file" required="required"/><br>
+          <label for="matiere">Matière</label>
+            <select id="matiere" name="matiere" required="required">
+              <option value=""> --- </option>
+              <option value="upload">Nimp</option>
+              <option value="anglais">Anglais</option>
+              <option value="francais">Français</option>
+              <option value="maths">Maths</option>
+              <option value="physique">Physique</option>
+            <option value="chimie">Chimie</option>
+              <option value="histoire">Histoire</option>
+              <option value="geo">géographie</option>
+            </select><br>
+          <label for="cours">Cours</label><input type="radio" name="categorie" id="cours" value="cours" required="required"><br>  
+          <label for="devoir">Devoir</label><input type="radio" name="categorie" id="devoir" value="devoir"><br>
+          <label for="exam">Contrôle</label>
+          <input type="radio" id="exam" name="categorie" value="exam"><br>
+          <label for="com">Commentaire:</label><br>
+            <textarea id="com" name="com"></textarea><br><br>
+          <input type="submit" id="upld" value="Envoyer !" />
+	  <br><br>
+	  <input type="submit" id="cancel" value="Annuler" />
+          </p>
+          </form>
+        </aside>
+<!-- /RAF/raf2/UPIMG/addbd.php -->
+        <section class="col-xs-12 col-lg-12" id="lesson">
+
+        </section>
+
+        <button class="btn btn-primary btn-lg"><i class="fas fa-bars"></i></button>
+      </main>
+      <footer class="row nav-menu">
+        <div class="col-4 col-sm-4 col-lg-2">
+          <figure>
+              <img id="tout" class="picnav" src="/img/dl.gif" alt="upload">
+          </figure>
+        </div>
+        <div class="col-4 col-sm-4 col-lg-2">
+          <figure>
+            <img id="anglais" class="picnav" src="/img/angl.gif">
+          </figure>
+        </div>
+        <div class="col-4 col-sm-4 col-lg-2">
+          <figure>
+            <img id="francais" class="picnav" src="/img/fran.gif">
+          </figure>
+        </div>
+        <div class="col-4 col-sm-4 col-lg-2">
+          <figure>
+            <img  id="histoire" class="picnav" src="/img/histoire.gif">
+          </figure>
+          </div>
+        <div class="col-4 col-sm-4 col-lg-2">
+          <figure>
+            <img  id="maths" class="picnav" src="/img/math.gif">
+          </figure>
+          </div>
+          <div class="col-4 col-sm-4 col-lg-2">
+            <figure>
+              <img  id="physique" class="picnav" src="/img/phys.gif">
+            </figure>
+          </div>
+      </footer>
+    </div>
+    <script src="/js/jquery-3.4.1.js"></script>
+    <script src="/js/toglr.js"></script>
+    <script src="/controllers/lesson.js"></script>
+  </body>
+</html>
+ 
