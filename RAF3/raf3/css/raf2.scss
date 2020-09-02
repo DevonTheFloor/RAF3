@@ -39,11 +39,12 @@ main{
 .send{
 	display: none;
 	text-align: center;
-	background-color: aliceblue;
-	opacity: 0.8;
+	background-color: rgb(162, 206, 245);
+	opacity: 0.90;
 	position: absolute;
-	margin: 20%;
+	padding: 10%;
 	z-index: 3;
+
 }
 section{
 
@@ -87,7 +88,15 @@ ul{
 	top: 150px;
 	z-index: 1;
   }
-
+#file{
+	margin: 3%;
+}
+#upld{
+	background-color: rgb(62, 231, 62);
+}
+#cancel{
+	background-color: rgb(233, 109, 109);
+}
 //=================== MEDIA
 
 @media screen and (max-width: 780px){
@@ -96,5 +105,12 @@ ul{
 		background-repeat: no-repeat;
 		background-size: cover;
 		background-attachment: fixed;
-  }
+	}
+	.send{
+		padding: 10%;
+		top: 0px;
+		min-height: 100%;
+		font-size: 1.2em;
+		line-height: 2em;
+	}
 }

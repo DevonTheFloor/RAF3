@@ -31,6 +31,7 @@
           Formulaire d'envoi de fichier :<br><br>
           <label for="monfichier">Selectionne le document</label><br>
           <input type="file" id="file" name="file" required="required"/><br>
+          <br>
           <label for="matiere">Matière</label>
             <select id="matiere" name="matiere" required="required">
               <option value=""> --- </option>
@@ -39,14 +40,16 @@
               <option value="francais">Français</option>
               <option value="maths">Maths</option>
               <option value="physique">Physique</option>
-            <option value="chimie">Chimie</option>
+              <option value="chimie">Chimie</option>
               <option value="histoire">Histoire</option>
               <option value="geo">géographie</option>
             </select><br>
+            <br>
           <label for="cours">Cours</label><input type="radio" name="categorie" id="cours" value="cours" required="required"><br>  
           <label for="devoir">Devoir</label><input type="radio" name="categorie" id="devoir" value="devoir"><br>
           <label for="exam">Contrôle</label>
           <input type="radio" id="exam" name="categorie" value="exam"><br>
+          <br>
           <label for="com">Commentaire:</label><br>
             <textarea id="com" name="com"></textarea><br><br>
           <input type="submit" id="upld" value="Envoyer !" />
