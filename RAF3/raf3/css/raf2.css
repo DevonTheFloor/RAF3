@@ -35,7 +35,7 @@ main {
   background-color: #a2cef5;
   opacity: 0.90;
   position: absolute;
-  padding: 10%;
+  padding: 3%;
   z-index: 3; }
 
 .mini {
@@ -76,10 +76,14 @@ ul {
   margin: 3%; }
 
 #upld {
-  background-color: #3ee73e; }
+  background-color: #3ee73e;
+  border-radius: 10px;
+  width: 50%; }
 
 #cancel {
-  background-color: #e96d6d; }
+  background-color: #ecb079;
+  border-radius: 10px;
+  width: 50%; }
 
 @media screen and (max-width: 780px) {
   body, html {
@@ -89,7 +93,7 @@ ul {
     background-attachment: fixed; }
 
   .send {
-    padding: 10%;
+    padding: 3%;
     top: 0px;
     min-height: 100%;
     font-size: 1.2em;

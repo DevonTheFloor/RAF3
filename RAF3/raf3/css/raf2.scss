@@ -42,13 +42,11 @@ main{
 	background-color: rgb(162, 206, 245);
 	opacity: 0.90;
 	position: absolute;
-	padding: 10%;
+	padding: 3%;
 	z-index: 3;
 
 }
-section{
 
-}
 .mini{
 	margin: 4%;
 	width: 80%;
@@ -93,9 +91,13 @@ ul{
 }
 #upld{
 	background-color: rgb(62, 231, 62);
+	border-radius: 10px;
+	width: 50%;
 }
 #cancel{
-	background-color: rgb(233, 109, 109);
+	background-color: rgb(236, 176, 121);
+	border-radius: 10px;
+	width: 50%;
 }
 //=================== MEDIA
 
@@ -107,7 +109,7 @@ ul{
 		background-attachment: fixed;
 	}
 	.send{
-		padding: 10%;
+		padding: 3%;
 		top: 0px;
 		min-height: 100%;
 		font-size: 1.2em;
