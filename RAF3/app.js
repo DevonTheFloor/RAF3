@@ -98,25 +98,9 @@ app.post('/', upload.single('file'), (req, res, next) => {
   });
   devoir.save()
   //.then(()=> res.redirect('index.html'))
-  .then(()=>{window.reaload()})
+  .then(()=>{location.reload()})
   .catch(error=>res.status(400).json({error}));
 });
 
-
-/*app.get('raf3/ecole/doc/phy/cours/',(req,res,next)=>{
-  let coursPhy= ["elec-chap10.pdf"];
-  function affdoc(){
-    let liste = document.getElementById('liste');
-    for(i=0;i<coursPhy.length;i++){
-      let lien = document.createElement('a'):
-      lien.href = coursPhy[i];
-      let docu = document.createElement('li');
-      docu.textContent= coursPhy[i];
-    }
-    
-  }
-  
-  
-});*/
 
 module.exports = app;
