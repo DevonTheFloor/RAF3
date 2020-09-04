@@ -26,47 +26,59 @@ app.use(express.static(__dirname + '/raf3'));
  
 
 app.get('/nimp/',(req,res,next)=>{
-  Task.find({matiere: "upload"})
+  Task.find({matiere: "upload"}).sort({_id:1}).limit(5)
     .then(tasks=>res.status(200).json(tasks))
-    .catch(error => res.status(400).json({error}));
+    .catch(error => res.status(404).json({error}));
 });
 
 app.get('/eng/', (req, res, next) => {
-  Task.find({matiere: "anglais"})
+  Task.find({matiere: "anglais"}).sort({_id:1}).limit(5)
     .then(tasks => res.status(200).json(tasks))
-    .catch(error => res.status(400).json({error}));
+    .catch(error => res.status(404).json({error}));
 });
 
 app.get('/french/', (req, res, next) => {
-  Task.find({matiere: "francais"})
+  Task.find({matiere: "francais"}).sort({_id:1}).limit(5)
     .then(tasks => res.status(200).json(tasks))
-    .catch(error => res.status(400).json({
+    .catch(error => res.status(404).json({
       error
     }));
 });
 
 app.get('/histoire/', (req, res, next) => {
-  Task.find({matiere: "histoire"})
+  Task.find({matiere: "histoire"}).sort({_id:1}).limit(5)
     .then(tasks => res.status(200).json(tasks))
-    .catch(error => res.status(400).json({
+    .catch(error => res.status(404).json({
       error
     }));
 });
 
+app.get('/geo/',(req,res,next)=>{
+  Task.find({matiere: "geo"}).sort({_id:1}).limit(5)
+  .then(()=>res.status(200).json({task}))
+  .catch(error => {res.status(404).json({error})})
+});
+
 app.get('/maths/', (req, res, next) => {
-  Task.find({matiere: "maths"})
+  Task.find({matiere: "maths"}).sort({_id:1}).limit(5)
     .then(tasks => res.status(200).json(tasks))
-    .catch(error => res.status(400).json({
+    .catch(error => res.status(404).json({
       error
     }));
 });
 
 app.get('/physique/', (req, res, next) => {
-  Task.find({matiere: "physique"})
+  Task.find({matiere: "physique"}).sort({_id:1}).limit(5)
     .then(tasks => res.status(200).json(tasks))
-    .catch(error => res.status(400).json({
+    .catch(error => res.status(404).json({
       error
     }));
+});
+
+app.get('/chimie/',(req,res,next)=>{
+  Task.find().sort({_id:1}).limit(5)
+  .then(()=>{res.status(200).json({task})})
+  .catch(error => res.status(404).json({error}))
 });
 
 let storage = multer.diskStorage({
@@ -85,7 +97,8 @@ app.post('/', upload.single('file'), (req, res, next) => {
     ...req.body
   });
   devoir.save()
-  .then(()=> res.redirect('index.html'))
+  //.then(()=> res.redirect('index.html'))
+  .then(()=>{window.reaload()})
   .catch(error=>res.status(400).json({error}));
 });
 
