@@ -32,7 +32,7 @@ app.get('/nimp/',(req,res,next)=>{
 });
 
 app.get('/eng/', (req, res, next) => {
-  Task.find({matiere: "anglais"}).limit(5)
+  Task.find({matiere: "anglais"}).limit(5).sort({_id:-1})
     .then(tasks => res.status(200).json(tasks))
     .catch(error => res.status(404).json({error}));
 });
@@ -55,7 +55,7 @@ app.get('/histoire/', (req, res, next) => {
 
 app.get('/geo/',(req,res,next)=>{
   Task.find({matiere: "geo"}).limit(5)
-  .then(()=>res.status(200).json({task}))
+  .then(()=>res.status(200).json({tasks}))
   .catch(error => {res.status(404).json({error})})
 });
 
