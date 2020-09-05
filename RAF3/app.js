@@ -26,19 +26,19 @@ app.use(express.static(__dirname + '/raf3'));
  
 
 app.get('/nimp/',(req,res,next)=>{
-  Task.find({matiere: "upload"}).sort({_id:1}).limit(5)
+  Task.find({matiere: "upload"}).limit(5)
     .then(tasks=>res.status(200).json(tasks))
     .catch(error => res.status(404).json({error}));
 });
 
 app.get('/eng/', (req, res, next) => {
-  Task.find({matiere: "anglais"}).sort({_id:1}).limit(5)
+  Task.find({matiere: "anglais"}).limit(5)
     .then(tasks => res.status(200).json(tasks))
     .catch(error => res.status(404).json({error}));
 });
 
 app.get('/french/', (req, res, next) => {
-  Task.find({matiere: "francais"}).sort({_id:1}).limit(5)
+  Task.find({matiere: "francais"}).limit(5)
     .then(tasks => res.status(200).json(tasks))
     .catch(error => res.status(404).json({
       error
@@ -46,7 +46,7 @@ app.get('/french/', (req, res, next) => {
 });
 
 app.get('/histoire/', (req, res, next) => {
-  Task.find({matiere: "histoire"}).sort({_id:1}).limit(5)
+  Task.find({matiere: "histoire"}).limit(5)
     .then(tasks => res.status(200).json(tasks))
     .catch(error => res.status(404).json({
       error
@@ -54,13 +54,13 @@ app.get('/histoire/', (req, res, next) => {
 });
 
 app.get('/geo/',(req,res,next)=>{
-  Task.find({matiere: "geo"}).sort({_id:1}).limit(5)
+  Task.find({matiere: "geo"}).limit(5)
   .then(()=>res.status(200).json({task}))
   .catch(error => {res.status(404).json({error})})
 });
 
 app.get('/maths/', (req, res, next) => {
-  Task.find({matiere: "maths"}).sort({_id:1}).limit(5)
+  Task.find({matiere: "maths"}).limit(5)
     .then(tasks => res.status(200).json(tasks))
     .catch(error => res.status(404).json({
       error
@@ -68,7 +68,7 @@ app.get('/maths/', (req, res, next) => {
 });
 
 app.get('/physique/', (req, res, next) => {
-  Task.find({matiere: "physique"}).sort({_id:1}).limit(5)
+  Task.find({matiere: "physique"}).limit(5)
     .then(tasks => res.status(200).json(tasks))
     .catch(error => res.status(404).json({
       error
@@ -76,7 +76,7 @@ app.get('/physique/', (req, res, next) => {
 });
 
 app.get('/chimie/',(req,res,next)=>{
-  Task.find().sort({_id:1}).limit(5)
+  Task.find({matiere:"chimie"}).sort({_id:1}).limit(5)
   .then(()=>{res.status(200).json({task})})
   .catch(error => res.status(404).json({error}))
 });
