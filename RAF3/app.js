@@ -26,7 +26,7 @@ app.use(express.static(__dirname + '/raf3'));
  
 
 app.get('/nimp/',(req,res,next)=>{
-  Task.find({matiere: "upload"}).sort({ObjectId:-1}).limit(5)
+  Task.find({matiere: "upload"}).sort({date_up:-1}).limit(5)
     .then(tasks=>res.status(200).json(tasks))
     .catch(error => res.status(404).json({error}));
 });
@@ -94,6 +94,7 @@ var upload = multer({
 app.post('/', upload.single('file'), (req, res, next) => {
   let devoir = new Task({
     nom: req.file.originalname,
+    date_up: Date.now(),
     ...req.body
   });
   devoir.save()
