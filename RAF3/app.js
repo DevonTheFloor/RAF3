@@ -97,8 +97,7 @@ app.post('/', upload.single('file'), (req, res, next) => {
     ...req.body
   });
   devoir.save()
-  //.then(()=> res.redirect('index.html'))
-  .then(()=>{location.reload()})
+  .then(()=> res.redirect('index.html'))
   .catch(error=>res.status(400).json({error}));
 });
 
