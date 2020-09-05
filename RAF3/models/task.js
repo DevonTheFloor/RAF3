@@ -6,7 +6,7 @@ const taskSchema = mongoose.Schema({
   ext: {typa: String, require: false},
   matiere: {type: String, require:true},
   categorie: {type: String, require:true},
-  date_up: {type: String, require: false},
+  date_up: {type: Number, require: false},
   com: {type: String, require: true}
 })
 
