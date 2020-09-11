@@ -26,7 +26,7 @@ app.use(express.static(__dirname + '/raf3'));
  
 
 app.get('/nimp/',(req,res,next)=>{
-  Task.find({matiere: "upload"}).sort({date_up:1})
+  Task.find({matiere: "upload"}).limit(5).sort({date_up:1})
     .then(tasks=>res.status(200).json(tasks))
     .catch(error => res.status(404).json({error}));
 });
@@ -38,7 +38,7 @@ app.get('/eng/', (req, res, next) => {
 });
 
 app.get('/french/', (req, res, next) => {
-  Task.find({matiere: "francais"}).limit(5)
+  Task.find({matiere: "francais"}).limit(5).sort({date_up:1})
     .then(tasks => res.status(200).json(tasks))
     .catch(error => res.status(404).json({
       error
@@ -46,7 +46,7 @@ app.get('/french/', (req, res, next) => {
 });
 
 app.get('/histoire/', (req, res, next) => {
-  Task.find({matiere: "histoire"}).limit(5)
+  Task.find({matiere: "histoire"}).limit(5).sort({date_up:1})
     .then(tasks => res.status(200).json(tasks))
     .catch(error => res.status(404).json({
       error
@@ -54,13 +54,13 @@ app.get('/histoire/', (req, res, next) => {
 });
 
 app.get('/geo/',(req,res,next)=>{
-  Task.find({matiere: "geo"}).limit(5)
+  Task.find({matiere: "geo"}).limit(5).sort({date_up:1})
   .then(()=>res.status(200).json({tasks}))
   .catch(error => {res.status(404).json({error})})
 });
 
 app.get('/maths/', (req, res, next) => {
-  Task.find({matiere: "maths"}).limit(5)
+  Task.find({matiere: "maths"}).limit(5).sort({date_up:1})
     .then(tasks => res.status(200).json(tasks))
     .catch(error => res.status(404).json({
       error
@@ -68,7 +68,7 @@ app.get('/maths/', (req, res, next) => {
 });
 
 app.get('/physique/', (req, res, next) => {
-  Task.find({matiere: "physique"}).limit(5)
+  Task.find({matiere: "physique"}).limit(5).sort({date_up:1})
     .then(tasks => res.status(200).json(tasks))
     .catch(error => res.status(404).json({
       error
@@ -102,5 +102,10 @@ app.post('/', upload.single('file'), (req, res, next) => {
   .catch(error=>res.status(400).json({error}));
 });
 
+app.delete('/del/:_id',(res,req,next)=>{
+  Task.deleteOne()
+  .then()
+  .catch()
+});
 
 module.exports = app;
