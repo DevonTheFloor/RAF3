@@ -4,6 +4,7 @@ const serveStatic = require('serve-static');
 const ejs = require('ejs');
 let path = require('path');
 let Task = require('./models/task');
+const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 mongoose.connect("mongodb+srv://devon:Mot2Passe@cluster1-0yflp.mongodb.net/travil?retryWrites=true&w=majority", {
     useNewUrlParser: true,
@@ -20,10 +21,10 @@ app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
   next();
 });
-
-/*app.use(serveStatic('raf3', { 'index': ['index.html', 'index.htm'] }));*/
-app.use(express.static(__dirname + '/raf3'));
  
+app.use(express.urlencoded({extended: true}));
+app.use(express.json());
+app.use(express.static(__dirname + '/raf3'));
 
 app.get('/nimp/',(req,res,next)=>{
   Task.find({matiere: "upload"}).limit(5).sort({date_up:1})
@@ -101,11 +102,11 @@ app.post('/', upload.single('file'), (req, res, next) => {
   .then(()=> res.redirect('index.html'))
   .catch(error=>res.status(400).json({error}));
 });
-
+//testsans sort -1  
 app.delete('/del/:id',(res,req,next)=>{
-  Task.deleteOne({_id: req.params.id})
-  .then(()=>{ res.status(404).json({message: "ressource effacée"})})
-  .catch(error => res.status(500).json({message: "deso prob de del probdel!"}))
+  Task.deleteOne({_id: req.params.id })
+  .then(()=>{ console.log("ressource effacée")})
+  .catch(error => res.status(500).json({error}))
 });
 
 module.exports = app;
