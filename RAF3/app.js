@@ -102,10 +102,10 @@ app.post('/', upload.single('file'), (req, res, next) => {
   .catch(error=>res.status(400).json({error}));
 });
 
-app.delete('/del/:_id',(res,req,next)=>{
-  Task.deleteOne()
-  .then()
-  .catch()
+app.delete('/del/:id',(res,req,next)=>{
+  Task.deleteOne({_id: req.params.id})
+  .then(()=>{ res.status(404).json({message: "ressource effacée"})})
+  .catch(error => res.status(500).json({error}))
 });
 
 module.exports = app;
